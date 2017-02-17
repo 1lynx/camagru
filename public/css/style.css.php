@@ -2,7 +2,7 @@
 session_start();
 header('Content-Type: text/css');
 if (isset($_SESSION['login'])) {
-  $user = "rgb(9, 71, 24)";
+  $user = "lightblue";
   $webcam = "";
 }
 else if (!isset($_SESSION['login'])) {
@@ -71,6 +71,7 @@ if (isset($fail))
     width: 100px;
     padding: 5px;
 }
+
 
 .circles:hover {
     transform: scale(1.1,1.1);

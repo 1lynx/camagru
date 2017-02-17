@@ -25,7 +25,7 @@
 
               }
               else {
-                      echo 'user.png';
+                      echo 'userco.png';
               }
               ?>"></a>
               <a href="index.php?p=webcam"><img id="photo_logo" src="../img/photo.png"></a>
