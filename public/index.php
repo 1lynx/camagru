@@ -35,6 +35,8 @@ if ($p === 'connexion_post')
     require '../pages/tools/connexion_post.php';
 if ($p === 'inscription_post')
     require '../pages/tools/inscription_post.php';
+if ($p === 'validation')
+    require '../pages/tools/validation.php';
 if ($p === 'user')
     require '../pages/user.php';
 if ($p === 'webcam')

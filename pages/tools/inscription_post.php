@@ -5,30 +5,25 @@
         $password = $_POST['password'];
         $email = $_POST['email'];
         $cle = md5(microtime(TRUE)*100000);
-        try
-        {
+        try {
             $res = $db->query('INSERT INTO users (login, cle, email, password) VALUES(:login, :cle, :email, :password)', array(
-            ':login' => $login,
-            ':password'=> $password,
-            ':email'=> $email,
-            ':cle' => $cle));
-            $destinataire = $email;
-            $sujet = "Activer votre compte" ;
-            $entete = "From: camagru@gmail.com" ;
+                ':login' => $login,
+                ':password' => $password,
+                ':email' => $email,
+                ':cle' => $cle));
+            $to = $email;
+            $subject = "Inscription Camagru";
 
-            // Le lien d'activation est composé du login(log) et de la clé(cle)
-            $message = 'Bienvenue sur Camagru,
- 
-Pour activer votre compte, veuillez cliquer sur le lien ci dessous
-ou copier/coller dans votre navigateur internet.
- 
-http://localhost:8888/POO/public/index.php?p=validation&log='.$login.'&cle='.$cle.'
- 
- 
----------------
-Ceci est un mail automatique, Merci de ne pas y répondre.';
+            $message = "<html><head></head><body><ul>Bienvenue sur Camagru!</ul>
+            <ul>Veuillez cliquer sur le lien ci-dessous pour activer votre compte!</ul>
+            <ul>http://localhost:8080/POO/public/index.php?p=validation&log=$login&cle=$cle</ul>
+            </body></html>";
 
-            var_dump(mail($destinataire, $sujet, $message, $entete));
+            $headers = 'MIME-Version: 1.0' . "\r\n";
+            $headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
+
+            mail($to, $subject, $message, $headers);
+            header('Location: index.php?p=home&c=success');
         }
         catch(Exception $e)
         {
