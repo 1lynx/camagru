@@ -1,3 +1,17 @@
-<h2>Single</h2>
+<ul>
+<div class="galery">
+        <?php
+        $id = $_GET['id'];
+        $statement = ("SELECT * FROM articles WHERE id='$id'");
+        foreach($db->query($statement) as $post): ?>
 
-<h4><a href="index.php?p=home">Back to home</a><h4>
+            <div class="single_block">
+                <a href="index.php?p=single&id=<?= $post->id; ?>">
+                    <img id="single_image" src="<?= $post->photo?>" alt="">
+                </a>
+            </div>
+
+        <?php endforeach; ?>
+        <div class="comment_box"></div>
+</div>
+</ul>

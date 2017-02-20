@@ -2,7 +2,7 @@
 if ($_POST['login'] != NULL && $_POST['password'] != NULL)
 {
   $login = $_POST['login'];
-  $password = md5($_POST['password']);
+  $password = $_POST['password'];
     $datas = $db->query('SELECT * FROM users WHERE 
     (login = :login AND password = :password)',
     ['login' => $login, 'password' => $password])->fetch();
@@ -13,7 +13,7 @@ if ($_POST['login'] != NULL && $_POST['password'] != NULL)
           header('Location: index.php?p=user');
     }
     else {
-        header('Location: index.php?p=connexion&c=1');
+        header('Location: index.php?p=connexion&c=fail');
     }
   }
 ?>

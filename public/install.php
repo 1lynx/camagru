@@ -31,7 +31,8 @@ $connection = mysqli_connect('localhost', 'root', 'root', $database_name);
 $statement = "CREATE TABLE users(
 id int(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 login VARCHAR(50) NOT NULL,
-password VARCHAR(200) NOT NULL
+password VARCHAR(200) NOT NULL,
+email VARCHAR(200) NOT NULL
 )";
 
 if (mysqli_query($connection, $statement))

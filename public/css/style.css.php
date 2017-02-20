@@ -9,10 +9,7 @@ else if (!isset($_SESSION['login'])) {
   $user = "rgb(221, 61, 3)";
   $webcam = "display: none;";
 }
-if (isset($fail))
-    {
 
-    }
 
 ?>
 
@@ -104,14 +101,39 @@ if (isset($fail))
 #image {
     height: 200px;
     width: 200px;
+    border-radius: 0px;
 }
 
 #image:hover {
     transform: scale(1.1, 1.1);
+    border-radius: 150px;
+}
+
+#single_image {
+     height: 350px;
+     width: 350px;
+ }
+
+#single_image:hover {
+    transform: scale(1.1, 1.1);
+    border-radius: 300px;
+}
+
+
+.single_block {
+float: left;
+padding:0px;
+}
+
+.comment_box {
+    height:335px;
+    border: 8px solid <?php echo $user;?>;
+    width: 470px;
+    margin-left: 400px;
 }
 
 .main_box {
-    margin: 0 auto;
+margin: 0 auto;
     width: 380px;
     border: 8px solid <?php echo $user;?>;
     border-radius: 500px;

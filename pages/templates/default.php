@@ -14,19 +14,22 @@
               else
                   echo 'user';
               ?>"><img id="user_logo" src="../img/<?php
-              if (!isset($_SESSION['login'])) {
-                  if ($_GET['c'] == false)
-                  {
-                      echo 'user.png';
+                  if (isset($_GET['c'])) {
+                      if ($_GET['c'] == "success") {
+                          echo 'success.png';
+                      }
+                      if ($_GET['c'] == "fail") {
+                          echo 'wrong.png';
+                      }
                   }
                   else {
-                      echo 'wrong.png';
+                      if (isset($_SESSION['login'])) {
+                          echo 'userco.png';
+                      }
+                      else {
+                          echo 'user.png';
+                      }
                   }
-
-              }
-              else {
-                      echo 'userco.png';
-              }
               ?>"></a>
               <a href="index.php?p=webcam"><img id="photo_logo" src="../img/photo.png"></a>
         </div><br><br><br><br><br><br>

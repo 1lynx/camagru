@@ -45,6 +45,12 @@ class Database {
         return $req;
     }
 
+    public function simple_query($query)
+    {
+        $req = $this->getPDO()->prepare($query);
+        $req->execute();
+    }
+
     public function lastInsertId()
     {
         return $this->getPDO()->lastInsertId();

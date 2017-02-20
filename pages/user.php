@@ -9,20 +9,20 @@
 
 
             <div class="galery_block">
-                <a href="index.php?p=post&id=<?= $post->id; ?>">
+                <a href="index.php?p=single&id=<?= $post->id; ?>">
                     <img id="image" src="<?= $post->photo?>" alt="">
                 </a>
             </div>
 
         <?php endforeach; ?>
     </div></div>
+
     <div class="settingsbox">
-        <img class="circles" src="../img/modify.png">
+        <a href="index.php?p=administration"><img class="circles" src="../img/modify.png"></a>
         <a href='index.php?p=logout'>
                 <img class="circles" src="../img/logout.png">
             </a>
     </div>
-
 
 </ul>
 

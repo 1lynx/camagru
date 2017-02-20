@@ -35,7 +35,12 @@ class User_function {
                 <br />
       	        <input type='text' name='login' id='login' size='30' />
                 <br /><br />
-      	        <label for='password'>Mot de passe</label><br />
+                <label for='email'>Email</label>
+                <br />
+      	        <input type='text' name='email' id='email' size='30' />
+                <br /><br />
+      	        <label for='password'>Mot de passe</label>
+      	        <br />
       	        <input type='password'
                           name='password'
                           id='password'
@@ -46,11 +51,36 @@ class User_function {
                           name='password_confirm'
                           id='password_confirm'
                           size='30' />
-                <br /><br />
+                <br />
+                <h4>Un mail de confirmation vous sera envoyé!</h4>
       	        <input type='submit' value='Valider' class='valider' />
           </p>
       </form><center>");
       return $ret;
     }
-  }
+
+
+    public function get_admin() {
+        $ret = ("<center><form method='post' action='?p=admin'>
+          <p>
+                <label> Tapez votre ancien mot de passe: </label> 
+                <br />
+                <input type='password' id='pwd' name='pwd'/> 
+                <br /><br />
+                <label> Confirmez votre ancien mot de passe: </label>
+                 <br />
+                <input type='password' id='confirm' name='confirm'/> 
+                <br /> <br />
+                <label> Tapez votre nouveau mot de passe: </label>
+                 <br />
+                <input type='password' id='new_pwd' name='new_pwd'/> 
+                <br /> <br />
+                <input type='submit' id='submit' name='submit' value='OK' /> 
+                <br />
+         </p>
+    </form></center>");
+    return $ret;
+    }
+
+}
 ?>
