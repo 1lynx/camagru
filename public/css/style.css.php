@@ -11,7 +11,13 @@ else if (!isset($_SESSION['login'])) {
 }
 
 
+
 ?>
+
+:hover {
+    transition:all 0.5s ease;
+
+}
 
 .menubar {
     height: 100px;
@@ -20,6 +26,7 @@ else if (!isset($_SESSION['login'])) {
     margin: -10px;
     position: fixed;
     top: 0;
+
 }
 
 .footer {
@@ -101,24 +108,32 @@ else if (!isset($_SESSION['login'])) {
 #image {
     height: 200px;
     width: 200px;
-    border-radius: 0px;
 }
 
 #image:hover {
-    transform: scale(1.1, 1.1);
-    border-radius: 150px;
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+
 }
 
 #single_image {
      height: 350px;
      width: 350px;
- }
-
-#single_image:hover {
-    transform: scale(1.1, 1.1);
     border-radius: 300px;
+
 }
 
+#single_image:hover {
+    border-radius: 0px;
+
+
+}
+
+#videoElement {
+    height: 300px;
+    width: 500px;
+}
 
 .single_block {
 float: left;
@@ -133,7 +148,7 @@ padding:0px;
 }
 
 .main_box {
-margin: 0 auto;
+    margin: 0 auto;
     width: 380px;
     border: 8px solid <?php echo $user;?>;
     border-radius: 500px;
@@ -145,4 +160,39 @@ margin: 0 auto;
     height: 100px;
     width: 100px;
 
+}
+
+.webcambox {
+    display: block;
+}
+
+video {
+    height: 350px;
+}
+
+.videobox {
+    float: left;
+    margin-left: 20px;
+    transform: scaleX(-1);
+}
+
+.butt {
+    margin-top: 110px;
+    float: left;
+}
+
+#startbutton {
+    padding: 20px;
+    height:120px;
+}
+
+#startbutton:hover {
+    transform: scale(1.1);
+    transform: rotate(360DEG);
+
+}
+
+#canvas {
+    float: left;
+    height: 350px;
 }

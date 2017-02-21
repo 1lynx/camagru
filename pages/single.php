@@ -6,9 +6,7 @@
         foreach($db->query($statement) as $post): ?>
 
             <div class="single_block">
-                <a href="index.php?p=single&id=<?= $post->id; ?>">
                     <img id="single_image" src="<?= $post->photo?>" alt="">
-                </a>
             </div>
 
         <?php endforeach; ?>
