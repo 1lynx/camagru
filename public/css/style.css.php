@@ -107,7 +107,6 @@ else if (!isset($_SESSION['login'])) {
 
 #image {
     height: 200px;
-    width: 200px;
 }
 
 #image:hover {
@@ -119,7 +118,6 @@ else if (!isset($_SESSION['login'])) {
 
 #single_image {
      height: 350px;
-     width: 350px;
     border-radius: 300px;
 
 }
@@ -144,7 +142,7 @@ padding:0px;
     height:335px;
     border: 8px solid <?php echo $user;?>;
     width: 470px;
-    margin-left: 400px;
+    margin-left: 500px;
 }
 
 .main_box {
