@@ -101,12 +101,21 @@ else if (!isset($_SESSION['login'])) {
 }
 
 .galery_block {
+    position: relative;
     padding: 15px;
     float: left;
 }
 
 #image {
     height: 200px;
+}
+
+#image_user {
+    height: 200px;
+}
+
+#image_user:hover {
+
 }
 
 #image:hover {
@@ -193,4 +202,11 @@ video {
 #canvas {
     float: left;
     height: 350px;
+}
+
+#delete {
+    margin-top: -10px;
+    margin-left: -10px;
+    position: absolute;
+    height:30px;
 }

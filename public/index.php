@@ -31,6 +31,8 @@ if ($p === 'administration')
     require '../pages/administration.php';
 if ($p === 'admin')
     require '../pages/tools/admin.php';
+if ($p === 'delete_pic')
+    require '../pages/tools/delete_pic.php';
 if ($p === 'connexion_post')
     require '../pages/tools/connexion_post.php';
 if ($p === 'inscription_post')
