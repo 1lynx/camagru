@@ -210,3 +210,36 @@ video {
     position: absolute;
     height:30px;
 }
+
+.effect_box {
+    display: block;
+    margin-left: 20px;
+    height:150px;
+    width: 800px;
+    background-color: lightblue;
+}
+
+.effecticon {
+    height:80px;
+}
+
+.brightness {
+    width: 100px;
+    height: 100px;
+}
+
+.contrast {
+    width: 100px;
+    height: 100px;
+}
+
+.effecter {
+    margin-top: 25px;
+    padding: 10px;
+    float: left;
+    margin-left: 20px;
+}
+
+.adder {
+    height:40px;
+}

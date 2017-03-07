@@ -9,7 +9,7 @@
 
 
             <div class="galery_block">
-                <a href="index.php?p=delete_pic&pic=<?= $post->photo?>">
+                <a href="index.php?p=delete&pic=<?= $post->photo?>">
                     <img id="delete" src="../img/delete.png">
                 </a>
                 <a href="index.php?p=single&id=<?= $post->id; ?>">

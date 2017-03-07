@@ -15,6 +15,10 @@ $data = base64_decode($img);
 $file = $path . uniqid() . '.png';
 $base_name = substr($file, 3);
 $success = file_put_contents($file, $data);
+$im = imagecreatefrompng($file);
+imagefilter($im, IMG_FILTER_CONTRAST, -5);
+$result = imagepng($im, $file);
+imagedestroy($im);
 
 
 $pdo = new PDO('mysql:host=localhost', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
