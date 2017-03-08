@@ -11,6 +11,7 @@ if ($_GET['e'] === 'contrast')
         $result = imagepng($im, $_GET['pic']);
         imagedestroy($im);
         header ("Location: $_SERVER[HTTP_REFERER]" );
+
     }
     if ($_GET['a'] === 'less')
     {
@@ -69,7 +70,30 @@ if ($_GET['e'] === 'gray')
     imagedestroy($im);
     header ("Location: $_SERVER[HTTP_REFERER]" );
 }
-
+if ($_GET['e'] === 'blue')
+{
+    $im = imagecreatefrompng($_GET['pic']);
+    imagefilter($im, IMG_FILTER_COLORIZE, 0, 115, 207);
+    $result = imagepng($im, $_GET['pic']);
+    imagedestroy($im);
+    header ("Location: $_SERVER[HTTP_REFERER]" );
+}
+if ($_GET['e'] === 'red')
+{
+    $im = imagecreatefrompng($_GET['pic']);
+    imagefilter($im, IMG_FILTER_COLORIZE, 179, 9, 52);
+    $result = imagepng($im, $_GET['pic']);
+    imagedestroy($im);
+    header ("Location: $_SERVER[HTTP_REFERER]" );
+}
+if ($_GET['e'] === 'yellow')
+{
+    $im = imagecreatefrompng($_GET['pic']);
+    imagefilter($im, IMG_FILTER_COLORIZE, 222, 237, 87);
+    $result = imagepng($im, $_GET['pic']);
+    imagedestroy($im);
+    header ("Location: $_SERVER[HTTP_REFERER]" );
+}
 
 
 

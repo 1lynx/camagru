@@ -49,8 +49,6 @@ else
 
 $statement = "CREATE TABLE articles (
 id int(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-titre VARCHAR(30) NOT NULL,
-contenu VARCHAR(1000) NOT NULL,
 photo VARCHAR(500) NOT NULL,
 login VARCHAR(255) NOT NULL 
 )";
@@ -63,6 +61,22 @@ else
 {
 	echo "error creating table articles  ".mysqli_error($connection);
 	echo "\n";
+}
+
+$statement = "CREATE TABLE comment ( 
+`photo_id` INT NOT NULL , 
+`user_login` VARCHAR(255) NOT NULL , 
+`content` LONGTEXT NOT NULL , 
+`date` DATETIME NOT NULL )";
+
+if (mysqli_query($connection, $statement))
+{
+    echo "table comment create\n";
+}
+else
+{
+    echo "error creating table produit  ".mysqli_error($connection);
+    echo "\n";
 }
 
 mysqli_close($connection);

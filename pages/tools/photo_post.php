@@ -17,6 +17,7 @@ $base_name = substr($file, 3);
 $success = file_put_contents($file, $data);
 $im = imagecreatefrompng($file);
 imagefilter($im, IMG_FILTER_CONTRAST, -5);
+imageflip($im, IMG_FLIP_HORIZONTAL);
 $result = imagepng($im, $file);
 imagedestroy($im);
 

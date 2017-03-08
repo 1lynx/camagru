@@ -26,13 +26,15 @@ else if (!isset($_SESSION['login'])) {
     margin: -10px;
     position: fixed;
     top: 0;
+    z-index: 10;
+
 
 }
 
 .footer {
     height: 100px;
     width: 100vw;
-    background-color: rgb(150, 150, 150);
+    background-color: rgb(0, 0, 0);
     position: fixed;
     bottom: 0;
     margin: -9px;
@@ -150,7 +152,7 @@ padding:0px;
 .comment_box {
     height:335px;
     border: 8px solid <?php echo $user;?>;
-    width: 470px;
+    width: 390px;
     margin-left: 500px;
 }
 
@@ -202,6 +204,8 @@ video {
 #canvas {
     float: left;
     height: 350px;
+    transform: scaleX(-1);
+
 }
 
 #delete {
@@ -215,7 +219,7 @@ video {
     display: block;
     margin-left: 20px;
     height:150px;
-    width: 800px;
+    width: 850px;
     background-color: lightblue;
 }
 
@@ -242,4 +246,14 @@ video {
 
 .adder {
     height:40px;
+}
+
+.colorize {
+    padding: 3px;
+    height: 50px;
+    margin-top: 15px;
+}
+
+.messenger {
+    bottom: 0px;
 }

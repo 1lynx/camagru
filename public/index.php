@@ -33,6 +33,8 @@ if ($p === 'admin')
     require '../pages/tools/admin.php';
 if ($p === 'delete')
     require '../pages/tools/delete_pic.php';
+if ($p === 'comment')
+    require '../pages/tools/comment.php';
 if ($p === 'effect')
     require '../pages/tools/effect.php';
 if ($p === 'connexion_post')
