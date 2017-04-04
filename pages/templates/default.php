@@ -8,6 +8,8 @@
   <body>
         <div class="menubar">
               <a href="index.php?p=home"><img id="logo" src="../img/logo.png"></a>
+
+
               <a href="index.php?p=<?php
               if (!isset($_SESSION['login']))
                   echo 'connexion';

@@ -89,7 +89,7 @@ if ($_GET['e'] === 'red')
 if ($_GET['e'] === 'yellow')
 {
     $im = imagecreatefrompng($_GET['pic']);
-    imagefilter($im, IMG_FILTER_COLORIZE, 222, 237, 87);
+    imagefilter($im, IMG_FILTER_COLORIZE, 255, 233, 1);
     $result = imagepng($im, $_GET['pic']);
     imagedestroy($im);
     header ("Location: $_SERVER[HTTP_REFERER]" );

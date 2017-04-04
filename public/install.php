@@ -64,10 +64,11 @@ else
 }
 
 $statement = "CREATE TABLE comment ( 
+`com_id` int(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 `photo_id` INT NOT NULL , 
 `user_login` VARCHAR(255) NOT NULL , 
 `content` LONGTEXT NOT NULL , 
-`date` DATETIME NOT NULL )";
+`date_creation` DATETIME NOT NULL )";
 
 if (mysqli_query($connection, $statement))
 {

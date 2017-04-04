@@ -4,14 +4,15 @@
 
         <?php
         $login = $_SESSION['login'];
-        $req = ("SELECT * FROM articles WHERE login='$login'");
+        $req = ("SELECT * FROM articles WHERE login='$login' ORDER BY id DESC");
         foreach($db->query($req) as $post):?>
 
 
             <div class="galery_block">
+                <div class="galery_head">
                 <a href="index.php?p=delete&pic=<?= $post->photo?>">
                     <img id="delete" src="../img/delete.png">
-                </a>
+                </a></div>
                 <a href="index.php?p=single&id=<?= $post->id; ?>">
                     <img id="image_user" src="<?= $post->photo?>" alt="">
                 </a>

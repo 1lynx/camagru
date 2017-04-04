@@ -2,12 +2,14 @@
 session_start();
 header('Content-Type: text/css');
 if (isset($_SESSION['login'])) {
-  $user = "lightblue";
+  $user = "white";
   $webcam = "";
+  $comment = "280px";
 }
 else if (!isset($_SESSION['login'])) {
   $user = "rgb(221, 61, 3)";
   $webcam = "display: none;";
+  $comment = "370px";
 }
 
 
@@ -32,7 +34,7 @@ else if (!isset($_SESSION['login'])) {
 }
 
 .footer {
-    height: 100px;
+    height: 50px;
     width: 100vw;
     background-color: rgb(0, 0, 0);
     position: fixed;
@@ -62,8 +64,8 @@ else if (!isset($_SESSION['login'])) {
 
 #photo_logo {
 <?php echo $webcam;?> float: right;
-    height: 81px;
-    margin-top: 15px;
+    height: 70px;
+    margin-top: 20px;
     margin-right: 10px;
 
 }
@@ -108,8 +110,15 @@ else if (!isset($_SESSION['login'])) {
     float: left;
 }
 
+.galery_head {
+    height:40px;
+    background-color: #ffffff;
+}
+
 #image {
-    height: 200px;
+    height: 400px;
+    width: 535px;
+
 }
 
 #image_user {
@@ -121,9 +130,6 @@ else if (!isset($_SESSION['login'])) {
 }
 
 #image:hover {
-    -webkit-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    transform: scale(1.1);
 
 }
 
@@ -150,10 +156,13 @@ padding:0px;
 }
 
 .comment_box {
-    height:335px;
-    border: 8px solid <?php echo $user;?>;
+    overflow:auto;
+    height:<?php echo $comment;?>;
+/*    border: 8px solid */<?php //echo $user;?>/*;*/
     width: 390px;
     margin-left: 500px;
+    display: block;
+
 }
 
 .main_box {
@@ -209,51 +218,178 @@ video {
 }
 
 #delete {
-    margin-top: -10px;
-    margin-left: -10px;
+    padding: 5px;
     position: absolute;
     height:30px;
 }
 
 .effect_box {
-    display: block;
-    margin-left: 20px;
-    height:150px;
-    width: 850px;
-    background-color: lightblue;
-}
-
-.effecticon {
-    height:80px;
-}
-
-.brightness {
-    width: 100px;
-    height: 100px;
-}
-
-.contrast {
-    width: 100px;
-    height: 100px;
+    margin-top: -4px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #f3f3f3;
+    height: 70px;
 }
 
 .effecter {
-    margin-top: 25px;
-    padding: 10px;
+    margin-top: 10px;
+    padding: 7px;
     float: left;
-    margin-left: 20px;
 }
 
-.adder {
-    height:40px;
+.content_effect {
+    margin-left: 24px;
+}
+
+.icon_effect {
+    height:36px;
+}
+
+.icon_effect:hover {
+    transform: scale(1.1);
 }
 
 .colorize {
     padding: 3px;
-    height: 50px;
-    margin-top: 15px;
+    height: 27px;
+}
+
+.colorize:hover {
+    transform: scale(1.1);
+
 }
 
 .messenger {
-    bottom: 0px;
+    margin-left: 500px;
+    width: 390px;
+    height: 110px;
+    border: 5px solid <?php echo $user;?>;
+    border-radius: 35px;
+    background-color: #dee0e2;
+
+
+}
+
+#post_comment {
+    margin-top: 15px;
+}
+
+.mess {
+    padding:10px;
+    font-family:"Helvetica Neue";
+    font-weight: bold;
+
+
+}
+
+.message {
+    margin-left: auto;
+    margin-right: auto;
+    float: left;
+    max-width: 535px;
+
+}
+
+.message:hover {
+    color: white;
+
+
+}
+
+.commentaire {
+    float: left;
+    background-color: #ffffff;
+    width: 535px;
+}
+
+.commentaire:hover {
+    background-color: #000000;
+    color: white;
+}
+
+.talker {
+    padding:17px;
+    float: left;
+    font-family:"Helvetica Neue";
+    font-size: 15px;
+
+}
+
+.button_send {
+    margin-top: 5px;
+    color: #fff;
+    background-color: #000000;
+    border: none;
+    box-shadow: 0 5px #383838;
+    width: 60px;
+    height:30px;
+}
+
+.button_send:hover {
+    background-color: #ff2a37
+    color: #000000;
+
+
+}
+
+.button_send:active {
+    background-color: #417cb8;
+    box-shadow: 0 10px #27496d;
+    transform: translateY(5px);
+}
+
+#delete_com {
+    height:20px;
+    float: right;
+    padding:10px;
+    margin-top: 15px;
+    margin-right: 10px;
+}
+
+.inputcom {
+    margin-top: 15px;
+    width:330px;
+    height:30px;
+    border:1px solid #417cb8;
+    border-left: 4px solid #000000;
+}
+
+.send {
+    margin-top: 4px;
+    font-family:Futura;
+}
+
+.photobox {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    width: 535px;
+}
+
+.img_block {
+    text-align: center;
+}
+
+.comment_box_home {
+    overflow:auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -4px;
+    max-height: 200px;
+    background-color: #ffffff;
+
+}
+
+.messenger_home {
+    height: 110px;
+    background-color: #faffff;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -18px;
+    width: auto;
+
+}
+
+body {
+    background-color: #e6e3e1;
 }
