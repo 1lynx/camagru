@@ -1,12 +1,42 @@
 <ul>
 <div class="home">
-<?php foreach($db->query('SELECT * FROM articles ORDER BY id DESC') as $post): ?>
+<?php
+$login = $_SESSION['login'];
+foreach($db->query('SELECT * FROM articles ORDER BY id DESC') as $post): ?>
     <div class="photobox">
     <div class="img_block">
         <a href="index.php?p=single&id=<?= $post->id; ?>">
           <img id="image" src="<?= $post->photo?>" alt="">
         </a>
     </div>
+        <div class="like_box">
+            <a href="index.php?p=like&id=<?= $post->id;?>&log=<?= $_SESSION['login']?>">
+                <img id="like" src="../img/<?php
+                if (isset($_SESSION['login'])) {
+                    $data_like = $db->query('SELECT * FROM like_table WHERE
+                    (user_login = :login AND photo_id = :photo_id)',
+                        ['login' => $login, 'photo_id' => $post->id])->fetch();
+                    if ($data_like['user_login'] == $login) {
+                        echo 'like.png';
+                    } else if (!($data_like[0])) {
+                        echo 'notlike.png';
+                    }
+                }
+                else {
+                    echo 'notlike.png';
+                }
+                ?>">
+            </a>
+            <div class="nb_like"><?php
+                $stat = ("SELECT * FROM `articles` WHERE id='$post->id'");
+                foreach ($db->query($stat) as $datas):
+                    $nb = $datas->nb_like;
+                endforeach;
+                if ($nb > 0) {
+                    echo $nb;
+                }
+                ?></div>
+        </div>
     <?php $com_req = ("SELECT * FROM comment WHERE photo_id='$post->id' ORDER BY date_creation DESC");
     if ($db->query($com_req) != null) {
     ?>

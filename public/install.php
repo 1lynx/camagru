@@ -50,7 +50,8 @@ else
 $statement = "CREATE TABLE articles (
 id int(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 photo VARCHAR(500) NOT NULL,
-login VARCHAR(255) NOT NULL 
+login VARCHAR(255) NOT NULL,
+nb_like int(11) NOT NULL 
 )";
 
 if (mysqli_query($connection, $statement))
@@ -77,6 +78,24 @@ if (mysqli_query($connection, $statement))
 else
 {
     echo "error creating table produit  ".mysqli_error($connection);
+    echo "\n";
+}
+
+$connection = mysqli_connect('localhost', 'root', 'root', $database_name);
+$statement = "CREATE TABLE like_table(
+id int(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+photo_id int(11) NOT NULL, 
+user_login VARCHAR(200) NOT NULL
+)";
+
+if (mysqli_query($connection, $statement))
+{
+    echo "table like create";
+    echo "\n";
+}
+else
+{
+    echo "error creating like user".mysqli_error($connection);
     echo "\n";
 }
 

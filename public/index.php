@@ -51,5 +51,7 @@ if ($p === 'webcam')
     require '../pages/webcam.php';
 if ($p === 'single')
     require '../pages/single.php';
+if ($p === 'like')
+    require '../pages/tools/like.php';
 $content = ob_get_clean();
 require '../pages/templates/default.php';

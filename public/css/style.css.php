@@ -7,7 +7,7 @@ if (isset($_SESSION['login'])) {
   $comment = "280px";
 }
 else if (!isset($_SESSION['login'])) {
-  $user = "rgb(221, 61, 3)";
+  $user = "white";
   $webcam = "display: none;";
   $comment = "370px";
 }
@@ -112,7 +112,7 @@ else if (!isset($_SESSION['login'])) {
 
 .galery_head {
     height:40px;
-    background-color: #ffffff;
+    background-color: #000000;
 }
 
 #image {
@@ -212,6 +212,7 @@ video {
 
 #canvas {
     float: left;
+    margin-left: 20px;
     height: 350px;
     transform: scaleX(-1);
 
@@ -392,4 +393,27 @@ video {
 
 body {
     background-color: #e6e3e1;
+}
+
+.like_box {
+    display: block;
+    margin-top: -4px;
+    height: 50px;
+    background-color: #ffffff;
+}
+
+#like {
+    float: left;
+    margin-left: 5px;
+    padding: 7px;
+    height:30px;
+}
+
+.nb_like {
+    float: left;
+    margin-top: 2px;
+    padding: 5px;
+    font-family:"Helvetica Neue";
+    font-size: 25px;
+    font-weight: bold;
 }

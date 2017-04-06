@@ -11,10 +11,12 @@
                 <div class="img_block">
                         <img id="image" src="<?= $post->photo?>" alt="">
                 </div>
+
                 <?php
                 if ($_SESSION['login'] === $log)
                 {
                     ?>
+
                     <div class="effect_box">
                         <div class="content_effect">
                         <div class="effecter">
@@ -57,6 +59,33 @@
                     <?php
                 }
                 ?>
+                    <div class="like_box">
+                        <a href="index.php?p=like&id=<?= $id;?>&log=<?= $log ?>">
+                            <img id="like" src="../img/<?php
+                            if (isset($_SESSION['login'])) {
+                                $data_like = $db->query('SELECT * FROM like_table WHERE
+                    (user_login = :login AND photo_id = :photo_id)',
+                                    ['login' => $log, 'photo_id' => $id])->fetch();
+                                if ($data_like['user_login'] == $log) {
+                                    echo 'like.png';
+                                } else if (!($data_like[0])) {
+                                    echo 'notlike.png';
+                                }
+                            }
+                            else {
+                                echo 'notlike.png';
+                            }
+                            ?>">
+                        </a>
+                        <div class="nb_like"><?php
+                            $stat = ("SELECT * FROM `articles` WHERE id='$post->id'");
+                            foreach ($db->query($stat) as $datas):
+                                $nb = $datas->nb_like;
+                            endforeach;
+                            echo $nb;
+                            ?></div>
+                    </div>
+
                 <?php $com_req = ("SELECT * FROM comment WHERE photo_id='$id' ORDER BY date_creation DESC");
                 if ($db->query($com_req) != null) {
                     ?>
