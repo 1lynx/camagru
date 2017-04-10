@@ -383,7 +383,7 @@ video {
 
 .messenger_home {
     height: 110px;
-    background-color: #faffff;
+    background-color: #ffffff;
     margin-left: auto;
     margin-right: auto;
     margin-top: -18px;

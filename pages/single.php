@@ -82,7 +82,9 @@
                             foreach ($db->query($stat) as $datas):
                                 $nb = $datas->nb_like;
                             endforeach;
-                            echo $nb;
+                            if ($nb > 0) {
+                                echo $nb;
+                            }
                             ?></div>
                     </div>
 
