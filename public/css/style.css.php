@@ -417,3 +417,12 @@ body {
     font-size: 25px;
     font-weight: bold;
 }
+
+.stick {
+    position: absolute;
+    height: 100px;
+    width: 1000px;
+    background-color: black;
+    margin-top: 380px;
+    margin-left: 50px;
+}

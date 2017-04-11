@@ -66,4 +66,11 @@
 
     }, false);
 
+    stickers.addEventListener('click', function(ev)
+    {
+        ev.preventDefault();
+        stickerpicture();
+
+    }, false);
+
 })();

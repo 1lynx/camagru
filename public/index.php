@@ -21,6 +21,8 @@ session_start();
 ob_start();
 if ($p === 'home')
     require '../pages/home.php';
+if ($p === 'stickers')
+    require '../pages/tools/stickers.php';
 if ($p === 'logout')
     require '../pages/tools/logout.php';
 if ($p === 'connexion')

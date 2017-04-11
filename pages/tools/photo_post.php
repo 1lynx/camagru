@@ -16,18 +16,17 @@ $file = $path . uniqid() . '.png';
 $base_name = substr($file, 3);
 $success = file_put_contents($file, $data);
 $im = imagecreatefrompng($file);
-imagefilter($im, IMG_FILTER_CONTRAST, -5);
+imagefilter($im, IMG_FILTER_CONTRAST, -15);
 imageflip($im, IMG_FLIP_HORIZONTAL);
-$name = "./img/stickers/01.png";
+
+$name = "../../img/stickers/01.png";
 $filtre = imagecreatefrompng($name);
 $largeur_source = imagesx($filtre);
 $hauteur_source = imagesy($filtre);
 $largeur_destination = imagesx($im);
 $hauteur_destination = imagesy($im);
-$destination_x = $largeur_destination - $largeur_source * 3;
-$destination_y =  $hauteur_destination - $hauteur_source * 3;
-imagecopy($filtre, $im, $destination_x, $destination_y, 0, 0, $largeur_source, $hauteur_source);
 
+imagecopy($im, $filtre, 0, 0, 0, 0, $largeur_source, $hauteur_source);
 imagepng($im, $file);
 imagedestroy($im);
 
