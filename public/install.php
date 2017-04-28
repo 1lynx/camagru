@@ -6,7 +6,7 @@ if (isset($_GET['name'])) {
 		$database_name = $_GET['name'];
 }
 else {
-		$database_name = "datas";
+		$database_name = "blog";
 }
 
 $connection = mysqli_connect('localhost', 'root', 'root');

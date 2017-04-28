@@ -204,12 +204,6 @@ video {
     height:120px;
 }
 
-#startbutton:hover {
-    transform: scale(1.1);
-    transform: rotate(360DEG);
-
-}
-
 #canvas {
     float: left;
     margin-left: 20px;
@@ -420,9 +414,13 @@ body {
 
 .stick {
     position: absolute;
-    height: 100px;
-    width: 1000px;
-    background-color: black;
+    height: 150px;
+    width: 800px;
+    background-color: #636363;
     margin-top: 380px;
     margin-left: 50px;
+}
+
+.radio {
+    margin-left: 25px;
 }

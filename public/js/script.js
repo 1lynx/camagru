@@ -51,10 +51,18 @@
         canvas.getContext('2d').drawImage(video, 0, 0, width, height);
         var data = canvas.toDataURL('image/png');
         var xhr = new XMLHttpRequest();
+        var m = 0;
+        for (i=0;i<6;i++) {
+            if (document.forms.choix.rad[i].checked==true) {
+                m=i;
+                console.log(m+1);
+                break;
+            }
+        }
         xhr.open('POST', '../pages/tools/photo_post.php', true);
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        xhr.send('data=' + data);
-        console.log(data);
+        xhr.send('data=' + data + '&stick=' + (m+1));
+        console.log(m+1);
     }
 
 
@@ -63,13 +71,6 @@
     {
         ev.preventDefault();
         takepicture();
-
-    }, false);
-
-    stickers.addEventListener('click', function(ev)
-    {
-        ev.preventDefault();
-        stickerpicture();
 
     }, false);
 
