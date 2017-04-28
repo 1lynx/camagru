@@ -10,7 +10,7 @@
 </div>
     </div>
 <div class="stick">
-    <form name="choix" method="post" action="?p=stickers">
+    <form name="choix" method="post">
         <p>
             <input class="radio" type="radio" name="rad" value="1" ><img src="../img/stickers/tumb1.png">
             <input class="radio" type="radio" name="rad" value="2"/><img src="../img/stickers/tumb2.png">

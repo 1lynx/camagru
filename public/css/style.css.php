@@ -201,7 +201,7 @@ video {
 
 #startbutton {
     padding: 20px;
-    height:120px;
+    height:200px;
 }
 
 #canvas {
@@ -414,13 +414,13 @@ body {
 
 .stick {
     position: absolute;
-    height: 150px;
+    height: 130px;
     width: 800px;
-    background-color: #636363;
+    background-color: #ffffff;
     margin-top: 380px;
     margin-left: 50px;
 }
 
 .radio {
-    margin-left: 25px;
+    margin-left: 30px;
 }
