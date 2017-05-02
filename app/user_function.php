@@ -7,21 +7,21 @@ class User_function {
     public function get_connexion() {
       $ret = ("<center><form method='post' action='?p=connexion_post' class='connexion'>
           <p>
-                <label for='login'>login</label><br />
+                <label for='login'>Entrez votre login :</label><br />
       	        <input type='text'
                           name='login'
                           size='30'
                           name : 'login '/>
       					<br /><br />
-      	        <label for='password'>Mot de passe</label><br />
+      	        <label for='password'>Entrez votre Mot de passe :</label><br />
       	        <input type='password'
                           name='password'
                           size='30'
                           name : 'password'/>
       					<br /><br />
-                <input type='submit' name='connexion' value='Connexion'>
+                <input type='submit' name='connexion' value='Se connecter'>
       					<br /><br />
-      					<a href='?p=inscription'>Vous Inscrire !</a>
+      					<a href='?p=inscription'>S'inscrire</a>
           </p>
       </form></center>
       ");
@@ -31,28 +31,28 @@ class User_function {
     public function get_inscription() {
       $ret = ("<center><form method='post' action='?p=inscription_post' class='inscription'>
           <p>
-                <label for='login'>login</label>
+                <label for='login'>Choose your login :</label>
                 <br />
       	        <input type='text' name='login' id='login' size='30' />
                 <br /><br />
-                <label for='email'>Email</label>
+                <label for='email'>Enter your mail :</label>
                 <br />
       	        <input type='text' name='email' id='email' size='30' />
                 <br /><br />
-      	        <label for='password'>Mot de passe</label>
+      	        <label for='password'>Choose a password :</label>
       	        <br />
       	        <input type='password'
                           name='password'
                           id='password'
                           size='30' />
                 <br /><br>
-                <label for='password_confirm'>Confirmez votre mot de passe</label><br />
+                <label for='password_confirm'>Confirm your password :</label><br />
       	        <input type='password'
                           name='password_confirm'
                           id='password_confirm'
                           size='30' />
-                <br />
-                <h4>Un mail de confirmation vous sera envoyé!</h4>
+                <br /><br>
+                <label>You will receive confirmation via email as soon as possible.</label><br><br>
       	        <input type='submit' value='Valider' class='valider' />
           </p>
       </form><center>");
@@ -80,6 +80,18 @@ class User_function {
          </p>
     </form></center>");
     return $ret;
+    }
+
+    public function error_parse($error_num) {
+        if ($error_num == 1){
+            $ret = ("");
+        }
+        if ($error_num == 2){
+
+        }
+        if ($error_num == 3){
+
+        }
     }
 
 }

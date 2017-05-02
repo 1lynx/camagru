@@ -16,7 +16,7 @@ $file = $path . uniqid() . '.png';
 $base_name = substr($file, 3);
 $success = file_put_contents($file, $data);
 $im = imagecreatefrompng($file);
-imagefilter($im, IMG_FILTER_CONTRAST, -15);
+imagefilter($im, IMG_FILTER_CONTRAST, -2);
 imageflip($im, IMG_FLIP_HORIZONTAL);
 
 if($_POST['stick'] == 1) {
@@ -56,7 +56,7 @@ if($_POST['stick'] == 4) {
     $hauteur_source = imagesy($filtre);
     $largeur_destination = imagesx($im);
     $hauteur_destination = imagesy($im);
-    imagecopy($im, $filtre, $largeur_destination - $largeur_source, $hauteur_destination - $hauteur_source, 0, 0, $largeur_source, $hauteur_source);
+    imagecopy($im, $filtre, $largeur_destination - $largeur_source, $hauteur_destination - $hauteur_source + 20, 0, 0, $largeur_source, $hauteur_source);
 }
 
 if($_POST['stick'] == 5) {

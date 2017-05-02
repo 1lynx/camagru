@@ -8,8 +8,12 @@
   <body>
         <div class="menubar">
               <a href="index.php?p=home"><img id="logo" src="../img/logo.png"></a>
-
-
+            <?php if (isset($_SESSION['login'])) {
+                echo "<a href = 'index.php?p=logout' >
+                <img id = 'user_logo' src = '../img/logout.png' >
+            </a >";
+            }
+            ?>
               <a href="index.php?p=<?php
               if (!isset($_SESSION['login']))
                   echo 'connexion';
@@ -33,6 +37,7 @@
                       }
                   }
               ?>"></a>
+
               <a href="index.php?p=webcam"><img id="photo_logo" src="../img/photo.png"></a>
         </div><br><br><br><br><br><br>
     <div class="container">

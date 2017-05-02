@@ -33,6 +33,11 @@ else if (!isset($_SESSION['login'])) {
 
 }
 
+label {
+    font-size: 13px;
+    font-family: Futura;
+}
+
 .footer {
     height: 50px;
     width: 100vw;
@@ -169,7 +174,7 @@ padding:0px;
     margin: 0 auto;
     width: 380px;
     border: 8px solid <?php echo $user;?>;
-    border-radius: 500px;
+    background-color: <?php echo $user;?>;
 }
 
 #wrong {
