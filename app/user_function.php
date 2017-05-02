@@ -19,9 +19,9 @@ class User_function {
                           size='30'
                           name : 'password'/>
       					<br /><br />
-                <input type='submit' name='connexion' value='Se connecter'>
+                <input type='submit' name='connexion' value='Sign in'>
       					<br /><br />
-      					<a href='?p=inscription'>S'inscrire</a>
+      					<label><a href='?p=inscription'>Sign up</a></label>
           </p>
       </form></center>
       ");

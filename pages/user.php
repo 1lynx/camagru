@@ -23,9 +23,6 @@
 
     <div class="settingsbox">
         <a href="index.php?p=administration"><img class="circles" src="../img/modify.png"></a>
-        <a href='index.php?p=logout'>
-                <img class="circles" src="../img/logout.png">
-            </a>
     </div>
 
 </ul>
