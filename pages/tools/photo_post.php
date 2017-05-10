@@ -46,7 +46,7 @@ if($_POST['stick'] == 3) {
     $hauteur_source = imagesy($filtre);
     $largeur_destination = imagesx($im);
     $hauteur_destination = imagesy($im);
-    imagecopy($im, $filtre, 0, $hauteur_destination - $hauteur_source, 0, 0, $largeur_source, $hauteur_source);
+    imagecopy($im, $filtre, -20, $hauteur_destination - $hauteur_source + 5, 0, 0, $largeur_source, $hauteur_source);
 }
 
 if($_POST['stick'] == 4) {

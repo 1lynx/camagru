@@ -33,18 +33,18 @@
 
     if($_POST['login'] == NULL)
     {
-        echo 'Vous devez entrer un login';
+        header('Location: index.php?p=inscription&c=fail&err=1');
     }
     if($_POST['password'] == NULL)
     {
-        echo 'Vous devez entrer un mot de passe';
+        header('Location: index.php?p=inscription&c=fail&err=2');
     }
     if($_POST['password_confirm'] == NULL)
     {
-        echo 'Vous devez confirmer votre mot de passe';
+        header('Location: index.php?p=inscription&c=fail&err=3');
     }
     if($_POST['password'] != $_POST['password_confirm'])
     {
-        echo 'Les deux mots de passe doivent être identiques';
+        header('Location: index.php?p=inscription&c=fail&err=4');
     }
 ?>
