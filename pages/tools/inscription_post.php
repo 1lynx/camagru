@@ -16,7 +16,7 @@
 
             $message = "<html><head></head><body><ul>Bienvenue sur Camagru!</ul>
             <ul>Veuillez cliquer sur le lien ci-dessous pour activer votre compte!</ul>
-            <ul>http://localhost:8080/POO/public/index.php?p=validation&log=$login&cle=$cle</ul>
+            <ul>http://localhost:8080/camagru/public/index.php?p=validation&log=$login&cle=$cle</ul>
             </body></html>";
 
             $headers = 'MIME-Version: 1.0' . "\r\n";

@@ -8,9 +8,15 @@ if ($_POST['login'] != NULL && $_POST['password'] != NULL)
     ['login' => $login, 'password' => $password])->fetch();
     if ($datas[0])
     {
-          session_start();
-          $_SESSION['login'] = $_POST['login'];
-          header('Location: index.php?p=user');
+            if($datas[4] == 1){
+                session_start();
+                $_SESSION['login'] = $_POST['login'];
+                header('Location: index.php?p=user');
+            }
+            else {
+                header('Location: index.php?p=connexion&c=fail&err=9');
+            }
+
     }
     else {
         header('Location: index.php?p=connexion&c=fail&err=8');

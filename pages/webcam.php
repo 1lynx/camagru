@@ -8,7 +8,8 @@
 <div class="canvas box">
         <canvas id="canvas"></canvas>
 </div>
-    </div>
+</div>
+
 <div class="stick">
     <form name="choix" class="radioform" method="post">
         <p>
@@ -20,6 +21,13 @@
             <input class="radio" type="radio" name="rad" value="6" checked/><img src="../img/stickers/none.png">
             <input id="startbutton" type="submit" name="submit" value="Submit" />
         </p>
+    </form>
+</div>
+
+<div>
+    <form method="post" action="reception.php" enctype="multipart/form-data">
+        <input type="file" name="mon_fichier" id="mon_fichier" /><br />
+        <input type="submit" name="submit" value="Envoyer" />
     </form>
 </div>
 <script src="../public/js/script.js">

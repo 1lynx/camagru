@@ -144,6 +144,13 @@ class User_function {
             Wrong login or wrong password. 
             </label></center></div>");
         }
+        if($error_num == 9)
+        {
+            $ret = ("<br><br><div class='main_box'><center>
+            <label>
+            Please confirm your account via mail. 
+            </label></center></div>");
+        }
         return $ret;
     }
 
