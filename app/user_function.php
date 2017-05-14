@@ -63,15 +63,15 @@ class User_function {
     public function get_admin() {
         $ret = ("<center><form method='post' action='?p=admin'>
           <p>
-                <label> Tapez votre ancien mot de passe: </label> 
+                <label> Type your old password: </label> 
                 <br />
                 <input type='password' id='pwd' name='pwd'/> 
                 <br /><br />
-                <label> Confirmez votre ancien mot de passe: </label>
+                <label> Confirm your old password: </label>
                  <br />
                 <input type='password' id='confirm' name='confirm'/> 
                 <br /> <br />
-                <label> Tapez votre nouveau mot de passe: </label>
+                <label> Type your new password: </label>
                  <br />
                 <input type='password' id='new_pwd' name='new_pwd'/> 
                 <br /> <br />
@@ -83,15 +83,68 @@ class User_function {
     }
 
     public function error_parse($error_num) {
-        if ($error_num == 1){
-            $ret = ("");
+    
+        if($error_num == 1)
+        {
+            $ret = ("<br><br><div class='main_box'><center>
+            <label>
+            Please enter a login!
+            </label></center></div>
+            ");
         }
-        if ($error_num == 2){
-
+        if($error_num == 2)
+        {
+            $ret = ("<br><br><div class='main_box'><center>
+            <label>
+            Please enter a password!
+            </label></center></div>
+            ");
         }
-        if ($error_num == 3){
-
+        if($error_num == 3)
+        {
+            $ret = ("<br><br><div class='main_box'><center>
+            <label>
+            Please confirm your password!
+            </label></center></div>
+            ");
         }
+        if($error_num == 4)
+        {
+            $ret = ("<br><br><div class='main_box'><center>
+            <label>
+            Your password and confirm password fields do not match. 
+            </label></center></div>
+            ");
+        }
+        if($error_num == 5)
+        {
+            $ret = ("<br><br><div class='main_box'><center>
+            <label>
+            You must fill all the fields. 
+            </label></center></div>");
+        }
+        if($error_num == 6)
+        {
+            $ret = ("<br><br><div class='main_box'><center>
+            <label>
+            Your password and confirm password fields do not match. 
+            </label></center></div>");
+        }
+        if($error_num == 7)
+        {
+            $ret = ("<br><br><div class='main_box'><center>
+            <label>
+            Your old password doesn't match. 
+            </label></center></div>");
+        }
+        if($error_num == 8)
+        {
+            $ret = ("<br><br><div class='main_box'><center>
+            <label>
+            Wrong login or wrong password. 
+            </label></center></div>");
+        }
+        return $ret;
     }
 
 }

@@ -2,7 +2,7 @@
     if($_POST['login'] != NULL AND $_POST['password'] != NULL AND $_POST['password_confirm'] != NULL  AND  $_POST['password'] == $_POST['password_confirm'])
     {
         $login = $_POST['login'];
-        $password = $_POST['password'];
+        $password = md5($_POST['password']);
         $email = $_POST['email'];
         $cle = md5(microtime(TRUE)*100000);
         try {

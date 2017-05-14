@@ -1,5 +1,5 @@
-<ul>
-    <div class="userbox">
+
+<div class="userbox">
     <div class="galery">
 
         <?php
@@ -23,7 +23,7 @@
     <div class="settingsbox">
         <a href="index.php?p=administration"><img class="circles" src="../img/modify.png"></a>
     </div>
-</ul>
+
 
 
 

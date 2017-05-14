@@ -8,4 +8,8 @@ if (isset($_SESSION['login'])) {
 }
 ?>
 </div>
+<?php
+$error = $user_connect->error_parse($_GET['err']);
+echo $error;
+?>
 

@@ -1,11 +1,13 @@
 <?php
 session_start();
+
 $pwd = htmlspecialchars($_POST["pwd"]);
 $confirm = htmlspecialchars($_POST["confirm"]);
 $new_pwd = htmlspecialchars($_POST["new_pwd"]);
 $submit = htmlspecialchars($_POST["submit"]);
+
 if (empty($pwd) || empty($confirm) || empty($new_pwd) || isset($submit) != "OK") {
-    header('Location: index.php?p=administration&c=fail');
+    header('Location: index.php?p=administration&c=fail&err=5');
 }
 else {
     $pwd = $_POST['pwd'];
@@ -23,11 +25,10 @@ else {
 
         }
         else {
-            echo $check_mdp;
-            var_dump($res);
+            header('Location: index.php?p=administration&c=fail&err=7');
         }
     }
     else
-        header('Location: index.php?p=administration&c=fail');
+        header('Location: index.php?p=administration&c=fail&err=6');
 }
 ?>
