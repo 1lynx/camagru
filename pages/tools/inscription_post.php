@@ -5,12 +5,14 @@
         $password = md5($_POST['password']);
         $email = $_POST['email'];
         $cle = md5(microtime(TRUE)*100000);
+        $valid = 0;
         try {
-            $res = $db->query('INSERT INTO users (login, cle, email, password) VALUES(:login, :cle, :email, :password)', array(
+            $res = $db->query('INSERT INTO users (login, cle, email, password, valid) VALUES(:login, :cle, :email, :password, :valid)', array(
                 ':login' => $login,
                 ':password' => $password,
                 ':email' => $email,
-                ':cle' => $cle));
+                ':cle' => $cle,
+                ':valid' => $valid));
             $to = $email;
             $subject = "Inscription Camagru";
 

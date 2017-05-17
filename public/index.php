@@ -31,6 +31,12 @@ if ($p === 'inscription')
     require '../pages/inscription.php';
 if ($p === 'administration')
     require '../pages/administration.php';
+if ($p === 'reinit')
+    require '../pages/reinit.php';
+if ($p === 'reinit_change')
+    require '../pages/reinit_change.php';
+if ($p === 'reinit_post')
+    require '../pages/tools/reinit_post.php';
 if ($p === 'admin')
     require '../pages/tools/admin.php';
 if ($p === 'delete')

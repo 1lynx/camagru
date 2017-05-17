@@ -1,6 +1,8 @@
 <ul>
 <div class="home">
 <?php
+$counter = $db->query('SELECT COUNT(*) as nbArt from articles');3
+
 $login = $_SESSION['login'];
 foreach($db->query('SELECT * FROM articles ORDER BY id DESC') as $post): ?>
     <div class="photobox">

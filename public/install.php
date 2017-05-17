@@ -33,7 +33,8 @@ id int(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 login VARCHAR(50) NOT NULL,
 password VARCHAR(200) NOT NULL,
 email VARCHAR(200) NOT NULL,
-cle VARCHAR(200) NOT NULL
+cle VARCHAR(200) NOT NULL,
+valid int(6) NOT NULL
 )";
 
 if (mysqli_query($connection, $statement))
@@ -51,7 +52,7 @@ $statement = "CREATE TABLE articles (
 id int(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 photo VARCHAR(500) NOT NULL,
 login VARCHAR(255) NOT NULL,
-nb_like int(11) NOT NULL 
+nb_like int(11) NOT NULL
 )";
 
 if (mysqli_query($connection, $statement))
@@ -64,11 +65,11 @@ else
 	echo "\n";
 }
 
-$statement = "CREATE TABLE comment ( 
+$statement = "CREATE TABLE comment (
 `com_id` int(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-`photo_id` INT NOT NULL , 
-`user_login` VARCHAR(255) NOT NULL , 
-`content` LONGTEXT NOT NULL , 
+`photo_id` INT NOT NULL ,
+`user_login` VARCHAR(255) NOT NULL ,
+`content` LONGTEXT NOT NULL ,
 `date_creation` DATETIME NOT NULL )";
 
 if (mysqli_query($connection, $statement))
@@ -84,7 +85,7 @@ else
 $connection = mysqli_connect('localhost', 'root', 'root', $database_name);
 $statement = "CREATE TABLE like_table(
 id int(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-photo_id int(11) NOT NULL, 
+photo_id int(11) NOT NULL,
 user_login VARCHAR(200) NOT NULL
 )";
 
