@@ -49,6 +49,7 @@ class Database {
     {
         $req = $this->getPDO()->prepare($query);
         $req->execute();
+        return $req;
     }
 
     public function lastInsertId()

@@ -1,10 +1,21 @@
 <ul>
 <div class="home">
 <?php
-$counter = $db->query('SELECT COUNT(*) as nbArt from articles');3
-
+$counter = $db->query('SELECT * FROM articles');
+foreach($db->query('SELECT * FROM articles') as $obj):
+  $nbArt++;
+endforeach;
+$perPage = 4;
+$nbPage = ceil($nbArt/$perPage);
+if(isset($_GET['e']) && $_GET['e']>0 && $_GET['e']<$nbPage) {
+  $cPage = $_GET['e'];
+}
+else {
+  $cPage = 1;
+}
 $login = $_SESSION['login'];
-foreach($db->query('SELECT * FROM articles ORDER BY id DESC') as $post): ?>
+$req_limit = "SELECT * FROM articles ORDER BY id DESC LIMIT " .(($cPage-1)*$perPage).",$perPage";
+foreach($db->query($req_limit) as $post): ?>
     <div class="photobox">
     <div class="img_block">
         <a href="index.php?p=single&id=<?= $post->id; ?>">
@@ -74,7 +85,20 @@ foreach($db->query('SELECT * FROM articles ORDER BY id DESC') as $post): ?>
     <?php } ?>
     </div>
 <?php endforeach; ?>
+<div class="main_box"><center><label id="page">
+<?php
+for($i=1;$i<=$nbPage;$i++) {
+  if($i==$cPage) {
+      echo "$i - ";
+  }
+  else {
+      echo "<a href='index.php?p=home&e=$i'>$i - </a>";
+  }
+}
 
+?>
+</label></center></div>
 <br><br>
 </div>
+
 </ul>

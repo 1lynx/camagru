@@ -36,6 +36,7 @@ else if (!isset($_SESSION['login'])) {
 label {
     font-size: 13px;
     font-family: Futura;
+    text-decoration: none;
 }
 
 .footer {
@@ -428,4 +429,9 @@ body {
 
 .radio {
     margin-left: 30px;
+}
+
+#page {
+  font-size: 15px;
+  font-weight: bold;
 }
