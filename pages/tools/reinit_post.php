@@ -26,8 +26,9 @@ if($_GET['a'] == open) {
         $login = $_GET['log'];
         $req = "SELECT * FROM users WHERE login='$login'";
         $datas = $db->query($req);
-        $caca = $datas[0]->cle;
-        var_dump($caca);
+        $cle = $datas[0]->cle;
+        if($cle == $_GET['cle'])
+
         }
         else
             echo "caca";
