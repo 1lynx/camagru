@@ -14,24 +14,25 @@ if($_GET['a'] == send)
     $subject = "Reinitialisation du mot de passe";
     $message = "<html><head></head><body><ul>Bienvenue sur Camagru!</ul>
     <ul>Veuillez cliquer sur le lien ci-dessous pour reinitialiser votre mot de passe!</ul>
-    <ul>http://localhost:8080/camagru/public/index.php?p=reinit_change&log=$login&cle=$new</ul>
+    <ul>http://localhost:8080/camagru/public/index.php?p=reinit_post&a=open&cle=$new</ul>
     </body></html>";
     $headers = 'MIME-Version: 1.0' . "\r\n";
     $headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
     mail($to, $subject, $message, $headers);
     header('Location: index.php?p=connexion&c=success');
 }
-
 if($_GET['a'] == open) {
-  if(!empty($password) || !empty($confirm)) {
-    if($_POST['new_pwd'] === $_POST['confirm']);
-    {
-      var_dump($_POST);
-    }
-  }
-  else {
-    header('Location: index.php?p=connexion&c=success');
-  }
+      if(isset($_GET['log'])) {
+        $login = $_GET['log'];
+        $req = "SELECT * FROM users WHERE login='$login'";
+        $datas = $db->query($req);
+        $caca = $datas[0]->cle;
+        var_dump($caca);
+        }
+        else
+            echo "caca";
 }
-
+else {
+  echo "crotte";
+}
 ?>

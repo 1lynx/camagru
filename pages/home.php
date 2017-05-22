@@ -5,9 +5,9 @@ $counter = $db->query('SELECT * FROM articles');
 foreach($db->query('SELECT * FROM articles') as $obj):
   $nbArt++;
 endforeach;
-$perPage = 4;
+$perPage = 5;
 $nbPage = ceil($nbArt/$perPage);
-if(isset($_GET['e']) && $_GET['e']>0 && $_GET['e']<$nbPage) {
+if(isset($_GET['e']) && $_GET['e']>0 && $_GET['e']<=$nbPage) {
   $cPage = $_GET['e'];
 }
 else {
